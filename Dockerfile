@@ -1,0 +1,7 @@
+FROM python:3.12-slim@sha256:cdbd05fb6f457ca275ff51ce00d93d865ca0b6a25f5ffb08262d94f6835771e5
+WORKDIR /app
+COPY requirements.txt app.py ./
+RUN pip install --no-cache-dir -r requirements.txt
+USER 65532:65532
+EXPOSE 8091
+CMD ["python", "app.py"]
